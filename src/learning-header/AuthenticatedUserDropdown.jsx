@@ -23,7 +23,7 @@ const AuthenticatedUserDropdown = ({ intl, username, email }) => {
         <Dropdown.Toggle variant="outline-primary">
           <FontAwesomeIcon icon={faUserCircle} className="d-md-none" size="lg" />
           <span data-hj-suppress className="d-none d-md-inline">
-            {email}
+            {email || username}
           </span>
         </Dropdown.Toggle>
         <Dropdown.Menu className="dropdown-menu-right">
@@ -51,7 +51,11 @@ const AuthenticatedUserDropdown = ({ intl, username, email }) => {
 AuthenticatedUserDropdown.propTypes = {
   intl: intlShape.isRequired,
   username: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired,
+  email: PropTypes.string,
+};
+
+AuthenticatedUserDropdown.defaultProps = {
+  email: null,
 };
 
 export default injectIntl(AuthenticatedUserDropdown);
