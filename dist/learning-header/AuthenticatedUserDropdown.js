@@ -15,7 +15,7 @@ var AuthenticatedUserDropdown = function AuthenticatedUserDropdown(_ref) {
   }, intl.formatMessage(messages.dashboard));
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("a", {
     className: "text-gray-700",
-    href: "".concat(getConfig().SUPPORT_URL)
+    href: "https://support.aspenpublishing.com/hc/en-us/categories/19204583377428-JD-Next"
   }, intl.formatMessage(messages.help)), /*#__PURE__*/React.createElement(Dropdown, {
     className: "user-dropdown ml-3"
   }, /*#__PURE__*/React.createElement(Dropdown.Toggle, {

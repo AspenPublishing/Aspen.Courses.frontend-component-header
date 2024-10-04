@@ -18,7 +18,7 @@ const AuthenticatedUserDropdown = ({ intl, username, email }) => {
 
   return (
     <>
-      <a className="text-gray-700" href={`${getConfig().SUPPORT_URL}`}>{intl.formatMessage(messages.help)}</a>
+      <a className="text-gray-700" href="https://support.aspenpublishing.com/hc/en-us/categories/19204583377428-JD-Next">{intl.formatMessage(messages.help)}</a>
       <Dropdown className="user-dropdown ml-3">
         <Dropdown.Toggle variant="outline-primary">
           <FontAwesomeIcon icon={faUserCircle} className="d-md-none" size="lg" />
