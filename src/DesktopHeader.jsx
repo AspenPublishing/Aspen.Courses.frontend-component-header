@@ -76,7 +76,7 @@ class DesktopHeader extends React.Component {
     const {
       userMenu,
       avatar,
-      username,
+      email,
       intl,
     } = this.props;
 
@@ -84,11 +84,11 @@ class DesktopHeader extends React.Component {
       <Menu transitionClassName="menu-dropdown" transitionTimeout={250}>
         <MenuTrigger
           tag="button"
-          aria-label={intl.formatMessage(messages['header.label.account.menu.for'], { username })}
+          aria-label={intl.formatMessage(messages['header.label.account.menu.for'], { email })}
           className="btn btn-outline-primary d-inline-flex align-items-center pl-2 pr-3"
         >
           <Avatar size="1.5em" src={avatar} alt="" className="mr-2" />
-          {username} <CaretIcon role="img" aria-hidden focusable="false" />
+          {email} <CaretIcon role="img" aria-hidden focusable="false" />
         </MenuTrigger>
         <MenuContent className="mb-0 dropdown-menu show dropdown-menu-right pin-right shadow py-2">
           {userMenu.map((group, index) => (
@@ -199,7 +199,7 @@ DesktopHeader.propTypes = {
   logoAltText: PropTypes.string,
   logoDestination: PropTypes.string,
   avatar: PropTypes.string,
-  username: PropTypes.string,
+  email: PropTypes.string,
   loggedIn: PropTypes.bool,
 
   // i18n
@@ -215,7 +215,7 @@ DesktopHeader.defaultProps = {
   logoAltText: null,
   logoDestination: null,
   avatar: null,
-  username: null,
+  email: null,
   loggedIn: false,
 };
 
