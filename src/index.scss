@@ -108,7 +108,10 @@ $white: #fff;
     .nav-link:focus,
     .nav-link.active,
     .expanded .nav-link {
-      background: $component-active-bg;
+      text-decoration: underline;
+      text-decoration-color: $component-active-bg;
+      text-underline-offset: 0.3em;
+      text-decoration-thickness: 0.1em;
       color: $component-active-color;
     }
     .menu {
