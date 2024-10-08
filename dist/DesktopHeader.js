@@ -93,6 +93,7 @@ var DesktopHeader = /*#__PURE__*/function (_React$Component) {
       var _this$props = this.props,
         userMenu = _this$props.userMenu,
         avatar = _this$props.avatar,
+        email = _this$props.email,
         username = _this$props.username,
         intl = _this$props.intl;
       return /*#__PURE__*/React.createElement(Menu, {
@@ -101,7 +102,7 @@ var DesktopHeader = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/React.createElement(MenuTrigger, {
         tag: "button",
         "aria-label": intl.formatMessage(messages['header.label.account.menu.for'], {
-          username: username
+          email: email
         }),
         className: "btn btn-outline-primary d-inline-flex align-items-center pl-2 pr-3"
       }, /*#__PURE__*/React.createElement(Avatar, {
@@ -109,7 +110,7 @@ var DesktopHeader = /*#__PURE__*/function (_React$Component) {
         src: avatar,
         alt: "",
         className: "mr-2"
-      }), username, " ", /*#__PURE__*/React.createElement(CaretIcon, {
+      }), email, " ", /*#__PURE__*/React.createElement(CaretIcon, {
         role: "img",
         "aria-hidden": true,
         focusable: "false"
@@ -214,6 +215,7 @@ DesktopHeader.propTypes = {
   logoDestination: PropTypes.string,
   avatar: PropTypes.string,
   username: PropTypes.string,
+  email: PropTypes.string,
   loggedIn: PropTypes.bool,
   // i18n
   intl: intlShape.isRequired
@@ -228,6 +230,7 @@ DesktopHeader.defaultProps = {
   logoDestination: null,
   avatar: null,
   username: null,
+  email: null,
   loggedIn: false
 };
 export default injectIntl(DesktopHeader);
