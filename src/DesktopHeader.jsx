@@ -77,6 +77,7 @@ class DesktopHeader extends React.Component {
       userMenu,
       avatar,
       email,
+      username,
       intl,
     } = this.props;
 
@@ -199,6 +200,7 @@ DesktopHeader.propTypes = {
   logoAltText: PropTypes.string,
   logoDestination: PropTypes.string,
   avatar: PropTypes.string,
+  username: PropTypes.string,
   email: PropTypes.string,
   loggedIn: PropTypes.bool,
 
@@ -215,6 +217,7 @@ DesktopHeader.defaultProps = {
   logoAltText: null,
   logoDestination: null,
   avatar: null,
+  username: null,
   email: null,
   loggedIn: false,
 };
