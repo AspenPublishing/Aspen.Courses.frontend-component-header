@@ -177,7 +177,8 @@ var DesktopHeader = /*#__PURE__*/function (_React$Component) {
         className: "site-header-desktop"
       }, /*#__PURE__*/React.createElement("a", {
         className: "nav-skip sr-only sr-only-focusable",
-        href: "#main"
+        href: "#main",
+        tabIndex: "0"
       }, intl.formatMessage(messages['header.label.skip.nav'])), /*#__PURE__*/React.createElement("div", {
         className: "container-mw-xl container-fluid"
       }, /*#__PURE__*/React.createElement("div", {

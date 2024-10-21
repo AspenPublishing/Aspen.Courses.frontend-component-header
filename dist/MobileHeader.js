@@ -151,7 +151,8 @@ var MobileHeader = /*#__PURE__*/function (_React$Component) {
         className: "site-header-mobile d-flex justify-content-between align-items-center shadow ".concat(stickyClassName)
       }, /*#__PURE__*/React.createElement("a", {
         className: "nav-skip sr-only sr-only-focusable",
-        href: "#main"
+        href: "#main",
+        tabIndex: "0"
       }, intl.formatMessage(messages['header.label.skip.nav'])), mainMenu.length > 0 ? /*#__PURE__*/React.createElement("div", {
         className: "w-100 d-flex justify-content-start"
       }, /*#__PURE__*/React.createElement(Menu, {

@@ -39,7 +39,8 @@ var StudioHeader = function StudioHeader(_ref) {
     className: "studio-header"
   }, /*#__PURE__*/React.createElement("a", {
     className: "nav-skip sr-only sr-only-focusable",
-    href: "#main"
+    href: "#main",
+    tabIndex: "0"
   }, "Skip to content"), /*#__PURE__*/React.createElement(Responsive, {
     maxWidth: 841
   }, /*#__PURE__*/React.createElement(MobileHeader, props)), /*#__PURE__*/React.createElement(Responsive, {
