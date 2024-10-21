@@ -143,7 +143,7 @@ class DesktopHeader extends React.Component {
 
     return (
       <header className="site-header-desktop">
-        <a className="nav-skip sr-only sr-only-focusable" href="#main">{intl.formatMessage(messages['header.label.skip.nav'])}</a>
+        <a className="nav-skip sr-only sr-only-focusable" href="#main" tabIndex="0">{intl.formatMessage(messages['header.label.skip.nav'])}</a>
         <div className='container-mw-xl container-fluid'>
           <div className="nav-container position-relative d-flex align-items-center">
             <LogoSlot {...logoProps} />
