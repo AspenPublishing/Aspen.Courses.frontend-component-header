@@ -5,7 +5,7 @@ import { AppContext } from '@edx/frontend-platform/react';
 import { ensureConfig } from '@edx/frontend-platform';
 import MobileHeader from './MobileHeader';
 import HeaderBody from './HeaderBody';
-ensureConfig(['STUDIO_BASE_URL', 'SITE_NAME', 'LOGOUT_URL', 'LOGIN_URL', 'LOGO_URL'], 'Studio Header component');
+ensureConfig(['STUDIO_BASE_URL', 'SITE_NAME', 'LOGOUT_URL', 'LOGIN_URL', 'LOGO_WHITE_URL'], 'Studio Header component');
 var StudioHeader = function StudioHeader(_ref) {
   var number = _ref.number,
     org = _ref.org,
@@ -19,7 +19,7 @@ var StudioHeader = function StudioHeader(_ref) {
     authenticatedUser = _useContext.authenticatedUser,
     config = _useContext.config;
   var props = {
-    logo: config.LOGO_URL,
+    logo: config.LOGO_WHITE_URL,
     logoAltText: "Studio ".concat(config.SITE_NAME),
     number: number,
     org: org,

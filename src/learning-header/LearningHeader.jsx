@@ -17,7 +17,7 @@ const LearningHeader = ({
   const headerLogo = (
     <LogoSlot
       href={`${getConfig().LMS_BASE_URL}/dashboard`}
-      src={getConfig().LOGO_URL}
+      src={getConfig().LOGO_WHITE_URL}
       alt={getConfig().SITE_NAME}
     />
   );

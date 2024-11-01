@@ -12,7 +12,7 @@ ensureConfig([
   'SITE_NAME',
   'LOGOUT_URL',
   'LOGIN_URL',
-  'LOGO_URL',
+  'LOGO_WHITE_URL',
 ], 'Studio Header component');
 
 const StudioHeader = ({
@@ -20,7 +20,7 @@ const StudioHeader = ({
 }) => {
   const { authenticatedUser, config } = useContext(AppContext);
   const props = {
-    logo: config.LOGO_URL,
+    logo: config.LOGO_WHITE_URL,
     logoAltText: `Studio ${config.SITE_NAME}`,
     number,
     org,

@@ -17,7 +17,7 @@ var LearningHeader = function LearningHeader(_ref) {
     authenticatedUser = _useContext.authenticatedUser;
   var headerLogo = /*#__PURE__*/React.createElement(LogoSlot, {
     href: "".concat(getConfig().LMS_BASE_URL, "/dashboard"),
-    src: getConfig().LOGO_URL,
+    src: getConfig().LOGO_WHITE_URL,
     alt: getConfig().SITE_NAME
   });
   return /*#__PURE__*/React.createElement("header", {

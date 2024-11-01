@@ -13,7 +13,7 @@ import PropTypes from 'prop-types';
 import DesktopHeader from './DesktopHeader';
 import MobileHeader from './MobileHeader';
 import messages from './Header.messages';
-ensureConfig(['LMS_BASE_URL', 'LOGOUT_URL', 'LOGIN_URL', 'SITE_NAME', 'LOGO_URL', 'ORDER_HISTORY_URL'], 'Header component');
+ensureConfig(['LMS_BASE_URL', 'LOGOUT_URL', 'LOGIN_URL', 'SITE_NAME', 'LOGO_WHITE_URL', 'ORDER_HISTORY_URL'], 'Header component');
 subscribe(APP_CONFIG_INITIALIZED, function () {
   mergeConfig({
     AUTHN_MINIMAL_HEADER: !!process.env.AUTHN_MINIMAL_HEADER
@@ -85,7 +85,7 @@ var Header = function Header(_ref) {
     content: intl.formatMessage(messages['header.user.menu.register'])
   }];
   var props = {
-    logo: config.LOGO_URL,
+    logo: config.LOGO_WHITE_URL,
     logoAltText: config.SITE_NAME,
     logoDestination: "".concat(config.LMS_BASE_URL, "/dashboard"),
     loggedIn: authenticatedUser !== null,
