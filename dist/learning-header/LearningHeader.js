@@ -33,8 +33,6 @@ var LearningHeader = function LearningHeader(_ref) {
       lineHeight: 1
     }
   }, /*#__PURE__*/React.createElement("span", {
-    className: "d-block small m-0"
-  }, courseOrg, " ", courseNumber), /*#__PURE__*/React.createElement("span", {
     className: "d-block m-0 font-weight-bold course-title"
   }, courseTitle)), showUserDropdown && authenticatedUser && /*#__PURE__*/React.createElement(AuthenticatedUserDropdown, {
     username: authenticatedUser.username,
