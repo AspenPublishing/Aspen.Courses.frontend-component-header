@@ -7,7 +7,7 @@ import { Dropdown } from '@openedx/paragon';
 
 import messages from './messages';
 
-const AuthenticatedUserDropdown = ({ intl, username }) => {
+const AuthenticatedUserDropdown = ({ intl, username, email }) => {
   const dashboardMenuItem = (
     <Dropdown.Item href={`${getConfig().LMS_BASE_URL}/dashboard`}>
       {intl.formatMessage(messages.dashboard)}
@@ -24,12 +24,11 @@ const AuthenticatedUserDropdown = ({ intl, username }) => {
           <span className="line" />
         </div>
         <span data-hj-suppress className="d-none d-md-inline">
-          {username}
+          {email || username}
         </span>
       </Dropdown.Toggle>
       <Dropdown.Menu className="dropdown-menu-right">
         <a href={`${getConfig().LMS_BASE_URL}/dashboard`} className="pgn__dropdown-item dropdown-item h-desktop">My Courses</a>
-        <a href={`${getConfig().LMS_BASE_URL}/courses`} className="pgn__dropdown-item dropdown-item h-desktop">Discover</a>
         {dashboardMenuItem}
         <Dropdown.Item href={`${getConfig().ACCOUNT_PROFILE_URL}/u/${username}`}>
           {intl.formatMessage(messages.profile)}
@@ -53,6 +52,11 @@ const AuthenticatedUserDropdown = ({ intl, username }) => {
 AuthenticatedUserDropdown.propTypes = {
   intl: intlShape.isRequired,
   username: PropTypes.string.isRequired,
+  email: PropTypes.string,
+};
+
+AuthenticatedUserDropdown.defaultProps = {
+  email: null,
 };
 
 export default injectIntl(AuthenticatedUserDropdown);

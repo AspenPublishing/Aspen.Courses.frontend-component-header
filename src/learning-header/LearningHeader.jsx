@@ -31,7 +31,6 @@ const LearningHeader = ({
         <div className="flex-grow-1 course-title-lockup" style={{ lineHeight: 1 }}>
           <div className="course-info-header">
             <span className="d-block title">{courseTitle}</span>
-            <span className="d-block org">{courseOrg} {courseNumber}</span>
           </div>
           <div className="nav-course">
             <a href={`${getConfig().LMS_BASE_URL}/dashboard`}>
@@ -48,6 +47,7 @@ const LearningHeader = ({
         {showUserDropdown && authenticatedUser && (
         <AuthenticatedUserDropdown
           username={authenticatedUser.username}
+          email={authenticatedUser.email}
         />
         )}
         {showUserDropdown && !authenticatedUser && (
