@@ -18,7 +18,7 @@ const LearningHeader = ({
   const headerLogo = (
     <LogoSlot
       href={`${getConfig().LMS_BASE_URL}/dashboard`}
-      src={getConfig().LOGO_URL}
+      src={document.cookie.includes('indigo-toggle-dark=light') ? getConfig().LOGO_URL : getConfig().LOGO_WHITE_URL}
       alt={getConfig().SITE_NAME}
     />
   );
