@@ -29,19 +29,6 @@ const LearningHeader = ({
       <div className="container-xl py-2 d-flex align-items-center">
         {headerLogo}
         <div className="flex-grow-1 course-title-lockup" style={{ lineHeight: 1 }}>
-          <div className="course-info-header">
-            <span className="d-block title">{courseTitle}</span>
-          </div>
-          <div className="nav-course">
-            <a href={`${getConfig().LMS_BASE_URL}/dashboard`}>
-              My Courses
-            </a>
-          </div>
-          <div className="nav-course">
-            <a href={`${getConfig().LMS_BASE_URL}/courses`}>
-              Discover
-            </a>
-          </div>
         </div>
         <ThemeToggleButton />
         {showUserDropdown && authenticatedUser && (

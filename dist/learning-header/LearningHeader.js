@@ -33,19 +33,7 @@ var LearningHeader = function LearningHeader(_ref) {
     style: {
       lineHeight: 1
     }
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "course-info-header"
-  }, /*#__PURE__*/React.createElement("span", {
-    className: "d-block title"
-  }, courseTitle)), /*#__PURE__*/React.createElement("div", {
-    className: "nav-course"
-  }, /*#__PURE__*/React.createElement("a", {
-    href: "".concat(getConfig().LMS_BASE_URL, "/dashboard")
-  }, "My Courses")), /*#__PURE__*/React.createElement("div", {
-    className: "nav-course"
-  }, /*#__PURE__*/React.createElement("a", {
-    href: "".concat(getConfig().LMS_BASE_URL, "/courses")
-  }, "Discover"))), /*#__PURE__*/React.createElement(ThemeToggleButton, null), showUserDropdown && authenticatedUser && /*#__PURE__*/React.createElement(AuthenticatedUserDropdown, {
+  }), /*#__PURE__*/React.createElement(ThemeToggleButton, null), showUserDropdown && authenticatedUser && /*#__PURE__*/React.createElement(AuthenticatedUserDropdown, {
     username: authenticatedUser.username,
     email: authenticatedUser.email
   }), showUserDropdown && !authenticatedUser && /*#__PURE__*/React.createElement(AnonymousUserMenu, null)));
