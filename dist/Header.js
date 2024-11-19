@@ -90,6 +90,7 @@ var Header = function Header(_ref) {
     logoDestination: "".concat(config.LMS_BASE_URL, "/dashboard"),
     loggedIn: authenticatedUser !== null,
     username: authenticatedUser !== null ? authenticatedUser.username : null,
+    email: authenticatedUser !== null ? authenticatedUser.email : null,
     avatar: authenticatedUser !== null ? authenticatedUser.avatar : null,
     mainMenu: getConfig().AUTHN_MINIMAL_HEADER ? [] : mainMenu,
     secondaryMenu: getConfig().AUTHN_MINIMAL_HEADER ? [] : secondaryMenu,

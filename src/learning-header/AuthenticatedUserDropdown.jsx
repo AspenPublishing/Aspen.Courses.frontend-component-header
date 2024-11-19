@@ -24,7 +24,7 @@ const AuthenticatedUserDropdown = ({ intl, username, email }) => {
           <span className="line" />
         </div>
         <span data-hj-suppress className="d-none d-md-inline">
-          {email || username}
+          {email}
         </span>
       </Dropdown.Toggle>
       <Dropdown.Menu className="dropdown-menu-right">
@@ -52,7 +52,7 @@ const AuthenticatedUserDropdown = ({ intl, username, email }) => {
 AuthenticatedUserDropdown.propTypes = {
   intl: intlShape.isRequired,
   username: PropTypes.string.isRequired,
-  email: PropTypes.string,
+  email: PropTypes.string.isRequired,
 };
 
 AuthenticatedUserDropdown.defaultProps = {

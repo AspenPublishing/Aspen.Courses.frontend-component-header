@@ -32,10 +32,10 @@ const LearningHeader = ({
         </div>
         <ThemeToggleButton />
         {showUserDropdown && authenticatedUser && (
-        <AuthenticatedUserDropdown
-          username={authenticatedUser.username}
-          email={authenticatedUser.email}
-        />
+          <AuthenticatedUserDropdown
+            username={authenticatedUser.username}
+            email={authenticatedUser.email}
+          />
         )}
         {showUserDropdown && !authenticatedUser && (
         <AnonymousUserMenu />
