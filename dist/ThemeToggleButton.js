@@ -25,9 +25,17 @@ var ThemeToggleButton = function ThemeToggleButton() {
     var theme = '';
     if (cookies.get(themeCookie) === 'dark') {
       document.body.classList.remove('indigo-dark-theme');
+      var logo = document.querySelector('.logo');
+      if (logo) {
+        logo.src = getConfig().LOGO_URL;
+      }
       theme = 'light';
     } else {
       document.body.classList.add('indigo-dark-theme');
+      var _logo = document.querySelector('.logo');
+      if (_logo) {
+        _logo.src = getConfig().LOGO_WHITE_URL;
+      }
       theme = 'dark';
     }
     cookies.set(themeCookie, theme, getCookieOptions(serverURL));
