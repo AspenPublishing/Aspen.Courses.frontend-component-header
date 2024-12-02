@@ -121,62 +121,73 @@ class MobileHeader extends React.Component {
     } = this.props;
     const logoProps = { src: logo, alt: logoAltText, href: logoDestination };
     const stickyClassName = stickyOnMobile ? 'sticky-top' : '';
-    const logoClasses = getConfig().AUTHN_MINIMAL_HEADER ? 'justify-content-left pl-3' : 'justify-content-center';
 
     return (
       <header
         aria-label={intl.formatMessage(messages['header.label.main.header'])}
-        className={`site-header-mobile d-flex justify-content-between align-items-center shadow ${stickyClassName}`}
+        className={`site-header-mobile d-flex flex-column shadow ${stickyClassName}`}
       >
-        <a className="nav-skip sr-only sr-only-focusable" href="#main">{intl.formatMessage(messages['header.label.skip.nav'])}</a>
-        {mainMenu.length > 0 ? (
-          <div className="w-100 d-flex justify-content-start sr-only">
+        <a className="nav-skip sr-only sr-only-focusable" href="#main">
+          {intl.formatMessage(messages['header.label.skip.nav'])}
+        </a>
 
-            <Menu className="position-static">
-              <MenuTrigger
-                tag="button"
-                className="icon-button"
-                aria-label={intl.formatMessage(messages['header.label.main.menu'])}
-                title={intl.formatMessage(messages['header.label.main.menu'])}
-              >
-                <MenuIcon role="img" aria-hidden focusable="false" style={{ width: '1.5rem', height: '1.5rem' }} />
-              </MenuTrigger>
-              <MenuContent
-                tag="nav"
-                aria-label={intl.formatMessage(messages['header.label.main.nav'])}
-                className="nav flex-column pin-left pin-right border-top shadow py-2"
-              >
-                {this.renderMainMenu()}
-                {this.renderSecondaryMenu()}
-              </MenuContent>
-            </Menu>
-          </div>
-        ) : null}
-        <div className={`w-100 d-flex ${logoClasses}`}>
+        {/* Logo Row */}
+        <div className="w-100 d-flex justify-content-center py-2">
           <LogoSlot {...logoProps} itemType="http://schema.org/Organization" />
         </div>
-        <ThemeToggleButton />
-        {userMenu.length > 0 || loggedOutItems.length > 0 ? (
-          <div className="mobile-menu">
-            <Menu tag="nav" aria-label={intl.formatMessage(messages['header.label.secondary.nav'])} className="position-static">
-              <MenuTrigger
-                tag="button"
-                aria-label={intl.formatMessage(messages['header.label.account.menu'])}
-                title={intl.formatMessage(messages['header.label.account.menu'])}
-              >
-                <div className="hamburger-menu">
-                  <span className="line" />
-                  <span className="line" />
-                  <span className="line" />
-                  <span className="line" />
-                </div>
-              </MenuTrigger>
-              <MenuContent tag="ul" className="nav flex-column pin-left pin-right border-top shadow py-2">
-                {loggedIn ? this.renderUserMenuItems() : this.renderLoggedOutItems()}
-              </MenuContent>
-            </Menu>
-          </div>
-        ) : null}
+
+        {/* Navigation Row */}
+        <div className="w-100 d-flex justify-content-between align-items-center px-3 py-2">
+          {/* Main Menu (Left) */}
+          {mainMenu.length > 0 && (
+            <div className="d-flex">
+              <Menu className="position-static">
+                <MenuTrigger
+                  tag="button"
+                  className="icon-button"
+                  aria-label={intl.formatMessage(messages['header.label.main.menu'])}
+                  title={intl.formatMessage(messages['header.label.main.menu'])}
+                >
+                  <MenuIcon role="img" aria-hidden focusable="false" style={{ width: '1.5rem', height: '1.5rem' }} />
+                </MenuTrigger>
+                <MenuContent
+                  tag="nav"
+                  aria-label={intl.formatMessage(messages['header.label.main.nav'])}
+                  className="nav flex-column pin-left pin-right border-top shadow py-2"
+                >
+                  {this.renderMainMenu()}
+                  {this.renderSecondaryMenu()}
+                </MenuContent>
+              </Menu>
+            </div>
+          )}
+
+          {/* Theme Toggle (Center-Right) */}
+          <ThemeToggleButton />
+
+          {/* User Menu (Right) */}
+          {(userMenu.length > 0 || loggedOutItems.length > 0) && (
+            <div className="mobile-menu">
+              <Menu tag="nav" aria-label={intl.formatMessage(messages['header.label.secondary.nav'])} className="position-static">
+                <MenuTrigger
+                  tag="button"
+                  aria-label={intl.formatMessage(messages['header.label.account.menu'])}
+                  title={intl.formatMessage(messages['header.label.account.menu'])}
+                >
+                  <div className="hamburger-menu">
+                    <span className="line" />
+                    <span className="line" />
+                    <span className="line" />
+                    <span className="line" />
+                  </div>
+                </MenuTrigger>
+                <MenuContent tag="ul" className="nav flex-column pin-left pin-right border-top shadow py-2">
+                  {loggedIn ? this.renderUserMenuItems() : this.renderLoggedOutItems()}
+                </MenuContent>
+              </Menu>
+            </div>
+          )}
+        </div>
       </header>
     );
   }
