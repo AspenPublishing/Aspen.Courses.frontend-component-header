@@ -7,7 +7,7 @@ import { Dropdown } from '@openedx/paragon';
 
 import messages from './messages';
 
-const AuthenticatedUserDropdown = ({ intl, username, email }) => {
+const AuthenticatedUserDropdown = ({ intl, username, email, name }) => {
   const dashboardMenuItem = (
     <Dropdown.Item href={`${getConfig().LMS_BASE_URL}/dashboard`}>
       {intl.formatMessage(messages.dashboard)}
@@ -24,7 +24,7 @@ const AuthenticatedUserDropdown = ({ intl, username, email }) => {
           <span className="line" />
         </div>
         <span data-hj-suppress className="d-none d-md-inline">
-          {email}
+          {name}
         </span>
       </Dropdown.Toggle>
       <Dropdown.Menu className="dropdown-menu-right">
@@ -53,10 +53,12 @@ AuthenticatedUserDropdown.propTypes = {
   intl: intlShape.isRequired,
   username: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
 };
 
 AuthenticatedUserDropdown.defaultProps = {
   email: null,
+  name: null,
 };
 
 export default injectIntl(AuthenticatedUserDropdown);

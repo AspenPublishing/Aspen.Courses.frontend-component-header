@@ -35,7 +35,8 @@ var LearningHeader = function LearningHeader(_ref) {
     }
   }), /*#__PURE__*/React.createElement(ThemeToggleButton, null), showUserDropdown && authenticatedUser && /*#__PURE__*/React.createElement(AuthenticatedUserDropdown, {
     username: authenticatedUser.username,
-    email: authenticatedUser.email
+    email: authenticatedUser.email,
+    name: authenticatedUser.name
   }), showUserDropdown && !authenticatedUser && /*#__PURE__*/React.createElement(AnonymousUserMenu, null)));
 };
 LearningHeader.propTypes = {

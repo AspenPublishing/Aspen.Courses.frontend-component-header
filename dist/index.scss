@@ -128,3 +128,15 @@ $white: #fff;
     border-radius: $rounded-pill;
   }
 }
+
+.site-header-mobile {
+  min-height: auto;
+}
+
+.site-header-mobile .hamburger-menu {
+  margin-left: 0;
+}
+
+.theme-toggle-button {
+  margin: 0 1rem;
+}

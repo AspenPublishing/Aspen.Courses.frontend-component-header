@@ -7,7 +7,8 @@ import messages from './messages';
 var AuthenticatedUserDropdown = function AuthenticatedUserDropdown(_ref) {
   var intl = _ref.intl,
     username = _ref.username,
-    email = _ref.email;
+    email = _ref.email,
+    name = _ref.name;
   var dashboardMenuItem = /*#__PURE__*/React.createElement(Dropdown.Item, {
     href: "".concat(getConfig().LMS_BASE_URL, "/dashboard")
   }, intl.formatMessage(messages.dashboard));
@@ -28,7 +29,7 @@ var AuthenticatedUserDropdown = function AuthenticatedUserDropdown(_ref) {
   })), /*#__PURE__*/React.createElement("span", {
     "data-hj-suppress": true,
     className: "d-none d-md-inline"
-  }, email)), /*#__PURE__*/React.createElement(Dropdown.Menu, {
+  }, name)), /*#__PURE__*/React.createElement(Dropdown.Menu, {
     className: "dropdown-menu-right"
   }, /*#__PURE__*/React.createElement("a", {
     href: "".concat(getConfig().LMS_BASE_URL, "/dashboard"),
@@ -46,10 +47,12 @@ var AuthenticatedUserDropdown = function AuthenticatedUserDropdown(_ref) {
 AuthenticatedUserDropdown.propTypes = {
   intl: intlShape.isRequired,
   username: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired
+  email: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired
 };
 AuthenticatedUserDropdown.defaultProps = {
-  email: null
+  email: null,
+  name: null
 };
 export default injectIntl(AuthenticatedUserDropdown);
 //# sourceMappingURL=AuthenticatedUserDropdown.js.map

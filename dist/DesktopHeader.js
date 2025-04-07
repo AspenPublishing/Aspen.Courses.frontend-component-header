@@ -95,6 +95,7 @@ var DesktopHeader = /*#__PURE__*/function (_React$Component) {
         userMenu = _this$props.userMenu,
         avatar = _this$props.avatar,
         email = _this$props.email,
+        name = _this$props.name,
         intl = _this$props.intl;
       return /*#__PURE__*/React.createElement(Menu, {
         transitionClassName: "menu-dropdown",
@@ -102,7 +103,7 @@ var DesktopHeader = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/React.createElement(MenuTrigger, {
         tag: "button",
         "aria-label": intl.formatMessage(messages['header.label.account.menu.for'], {
-          email: email
+          name: name
         }),
         className: "btn btn-outline-primary d-inline-flex align-items-center pl-2 pr-3"
       }, /*#__PURE__*/React.createElement(Avatar, {
@@ -110,7 +111,7 @@ var DesktopHeader = /*#__PURE__*/function (_React$Component) {
         src: avatar,
         alt: "",
         className: "mr-2"
-      }), email, " ", /*#__PURE__*/React.createElement(CaretIcon, {
+      }), name, " ", /*#__PURE__*/React.createElement(CaretIcon, {
         role: "img",
         "aria-hidden": true,
         focusable: "false"
@@ -214,6 +215,7 @@ DesktopHeader.propTypes = {
   logoDestination: PropTypes.string,
   avatar: PropTypes.string,
   email: PropTypes.string,
+  name: PropTypes.string,
   loggedIn: PropTypes.bool,
   // i18n
   intl: intlShape.isRequired
@@ -228,6 +230,7 @@ DesktopHeader.defaultProps = {
   logoDestination: null,
   avatar: null,
   email: null,
+  name: null,
   loggedIn: false
 };
 export default injectIntl(DesktopHeader);

@@ -143,15 +143,20 @@ var MobileHeader = /*#__PURE__*/function (_React$Component) {
         href: logoDestination
       };
       var stickyClassName = stickyOnMobile ? 'sticky-top' : '';
-      var logoClasses = getConfig().AUTHN_MINIMAL_HEADER ? 'justify-content-left pl-3' : 'justify-content-center';
       return /*#__PURE__*/React.createElement("header", {
         "aria-label": intl.formatMessage(messages['header.label.main.header']),
-        className: "site-header-mobile d-flex justify-content-between align-items-center shadow ".concat(stickyClassName)
+        className: "site-header-mobile d-flex flex-column shadow ".concat(stickyClassName)
       }, /*#__PURE__*/React.createElement("a", {
         className: "nav-skip sr-only sr-only-focusable",
         href: "#main"
-      }, intl.formatMessage(messages['header.label.skip.nav'])), mainMenu.length > 0 ? /*#__PURE__*/React.createElement("div", {
-        className: "w-100 d-flex justify-content-start sr-only"
+      }, intl.formatMessage(messages['header.label.skip.nav'])), /*#__PURE__*/React.createElement("div", {
+        className: "w-100 d-flex justify-content-center py-2"
+      }, /*#__PURE__*/React.createElement(LogoSlot, _extends({}, logoProps, {
+        itemType: "http://schema.org/Organization"
+      }))), /*#__PURE__*/React.createElement("div", {
+        className: "w-100 d-flex justify-content-between align-items-center px-3 py-2"
+      }, mainMenu.length > 0 && /*#__PURE__*/React.createElement("div", {
+        className: "d-flex"
       }, /*#__PURE__*/React.createElement(Menu, {
         className: "position-static"
       }, /*#__PURE__*/React.createElement(MenuTrigger, {
@@ -171,11 +176,7 @@ var MobileHeader = /*#__PURE__*/function (_React$Component) {
         tag: "nav",
         "aria-label": intl.formatMessage(messages['header.label.main.nav']),
         className: "nav flex-column pin-left pin-right border-top shadow py-2"
-      }, this.renderMainMenu(), this.renderSecondaryMenu()))) : null, /*#__PURE__*/React.createElement("div", {
-        className: "w-100 d-flex ".concat(logoClasses)
-      }, /*#__PURE__*/React.createElement(LogoSlot, _extends({}, logoProps, {
-        itemType: "http://schema.org/Organization"
-      }))), /*#__PURE__*/React.createElement(ThemeToggleButton, null), userMenu.length > 0 || loggedOutItems.length > 0 ? /*#__PURE__*/React.createElement("div", {
+      }, this.renderMainMenu(), this.renderSecondaryMenu()))), /*#__PURE__*/React.createElement(ThemeToggleButton, null), (userMenu.length > 0 || loggedOutItems.length > 0) && /*#__PURE__*/React.createElement("div", {
         className: "mobile-menu"
       }, /*#__PURE__*/React.createElement(Menu, {
         tag: "nav",
@@ -198,7 +199,7 @@ var MobileHeader = /*#__PURE__*/function (_React$Component) {
       }))), /*#__PURE__*/React.createElement(MenuContent, {
         tag: "ul",
         className: "nav flex-column pin-left pin-right border-top shadow py-2"
-      }, loggedIn ? this.renderUserMenuItems() : this.renderLoggedOutItems()))) : null);
+      }, loggedIn ? this.renderUserMenuItems() : this.renderLoggedOutItems())))));
     }
   }]);
 }(React.Component);
