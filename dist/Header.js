@@ -91,6 +91,7 @@ var Header = function Header(_ref) {
     loggedIn: authenticatedUser !== null,
     username: authenticatedUser !== null ? authenticatedUser.username : null,
     name: authenticatedUser !== null ? authenticatedUser.name : null,
+    firstName: authenticatedUser !== null ? authenticatedUser.first_name : null,
     email: authenticatedUser !== null ? authenticatedUser.email : null,
     avatar: authenticatedUser !== null ? authenticatedUser.avatar : null,
     mainMenu: getConfig().AUTHN_MINIMAL_HEADER ? [] : mainMenu,

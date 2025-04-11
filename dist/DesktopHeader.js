@@ -95,6 +95,7 @@ var DesktopHeader = /*#__PURE__*/function (_React$Component) {
         userMenu = _this$props.userMenu,
         avatar = _this$props.avatar,
         email = _this$props.email,
+        firstName = _this$props.firstName,
         name = _this$props.name,
         intl = _this$props.intl;
       return /*#__PURE__*/React.createElement(Menu, {
@@ -111,7 +112,7 @@ var DesktopHeader = /*#__PURE__*/function (_React$Component) {
         src: avatar,
         alt: "",
         className: "mr-2"
-      }), name, " ", /*#__PURE__*/React.createElement(CaretIcon, {
+      }), firstName, " ", /*#__PURE__*/React.createElement(CaretIcon, {
         role: "img",
         "aria-hidden": true,
         focusable: "false"
@@ -216,6 +217,7 @@ DesktopHeader.propTypes = {
   avatar: PropTypes.string,
   email: PropTypes.string,
   name: PropTypes.string,
+  firstName: PropTypes.string,
   loggedIn: PropTypes.bool,
   // i18n
   intl: intlShape.isRequired
@@ -231,6 +233,7 @@ DesktopHeader.defaultProps = {
   avatar: null,
   email: null,
   name: null,
+  firstName: null,
   loggedIn: false
 };
 export default injectIntl(DesktopHeader);
