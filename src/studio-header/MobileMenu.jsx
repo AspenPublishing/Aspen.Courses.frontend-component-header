@@ -26,6 +26,11 @@ const MobileMenu = ({
                   </a>
                 </li>
               ))}
+                <li className="mobile-menu-item">
+                  <a href="https://support.aspenpublishing.com/hc/en-us/categories/19204583377428-JD-Next">
+                    Help
+                  </a>
+                </li>
             </ul>
           </Collapsible>
         );
